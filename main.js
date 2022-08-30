@@ -16,8 +16,12 @@ function getComputerChoice() {
 function getPlayerChoice() {
     let input;
     while (true) {
-        input = prompt("Choose Your Weapon").toUpperCase();
-        if ((input !== null) && input === "ROCK" || input === "PAPER" || input === "SCISSORS") {
+        input = prompt("Choose Your Weapon");
+        if (input == null) {
+            input = prompt("Choose Your Weapon");
+        }
+        input = input.toUpperCase();
+        if (input === "ROCK" || input=== "PAPER" || input === "SCISSORS") {
             return input;
         }
     }
