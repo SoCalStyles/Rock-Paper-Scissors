@@ -11,6 +11,10 @@ const scissorsButton = document.querySelector('#scissorsButton');
 const chosen = document.querySelector('.chosen');
 const roundResult = document.querySelector('.roundResult');
 const gameResult = document.querySelector('.gameResult');
+
+const playerTally = document.querySelector('.playerTally');
+const tieTally = document.querySelector('.tieTally');
+const computerTally = document.querySelector('.computerTally');
             
 // Computer will randomly generate rock, paper, or scissors
 function getComputerChoice() {
@@ -29,36 +33,44 @@ function playRound(playerType, computerType) {
         cScore++;
         roundResult.textContent = "Round goes to EVIL COMPUTER";
     }
+    playerTally.textContent = pScore;
+    tieTally.textContent = tieScore;
+    computerTally.textContent = cScore;
     
 }
 
-if (pScore < 5 && tieScore < 5 && cScore < 5) {
 rockButton.addEventListener('click', () => {
-    const playerSelection = "ROCK";
-    const computerSelection = getComputerChoice();
-    playRound(playerSelection, computerSelection);
-    console.log(playerSelection, computerSelection, pScore, tieScore, cScore);
-    chosen.textContent = `You chose ROCK, computer chose ${computerSelection}`;
-    finalResult();
+    if (pScore < 5 && tieScore < 5 && cScore < 5) {
+        const playerSelection = "ROCK";
+        const computerSelection = getComputerChoice();
+        playRound(playerSelection, computerSelection);
+        console.log(playerSelection, computerSelection, pScore, tieScore, cScore);
+        chosen.textContent = `You chose ROCK, computer chose ${computerSelection}`;
+        finalResult();
+    }
 });
 paperButton.addEventListener('click', () => {
-    const playerSelection = "PAPER";
-    const computerSelection = getComputerChoice();
-    playRound(playerSelection, computerSelection);
-    console.log(playerSelection, computerSelection, pScore, tieScore, cScore);
-    chosen.textContent = `You chose PAPER, computer chose ${computerSelection}`;
-    finalResult();
+    if (pScore < 5 && tieScore < 5 && cScore < 5) {
+        const playerSelection = "PAPER";
+        const computerSelection = getComputerChoice();
+        playRound(playerSelection, computerSelection);
+        console.log(playerSelection, computerSelection, pScore, tieScore, cScore);
+        chosen.textContent = `You chose PAPER, computer chose ${computerSelection}`;
+        finalResult();
+    }
 });
 
 scissorsButton.addEventListener('click', () => {
-    const playerSelection = "SCISSORS";
-    const computerSelection = getComputerChoice();
-    playRound(playerSelection, computerSelection);
-    console.log(playerSelection, computerSelection, pScore, tieScore, cScore);
-    chosen.textContent = `You chose SCISSORS, computer chose ${computerSelection}`;
-    finalResult();
+    if (pScore < 5 && tieScore < 5 && cScore < 5) {
+        const playerSelection = "SCISSORS";
+        const computerSelection = getComputerChoice();
+        playRound(playerSelection, computerSelection);
+        console.log(playerSelection, computerSelection, pScore, tieScore, cScore);
+        chosen.textContent = `You chose SCISSORS, computer chose ${computerSelection}`;
+        finalResult();
+    }    
 });
-}
+
 
 function finalResult() {
     if (pScore === 5) {
@@ -67,8 +79,7 @@ function finalResult() {
         gameResult.textContent = "It's a draw!";
     } else if (cScore === 5) {
         gameResult.textContent = "The Evil Computer has won!";
-    } else {
-    }
+    } 
 }
 
 

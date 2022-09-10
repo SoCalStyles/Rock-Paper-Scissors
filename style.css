@@ -1,15 +1,31 @@
-.scoreBoard {
-    border-width: 3px;
-    border-color: black;
-}
-
-
-.playerTally {
-    border-width: 3px;
-    border-color: black;
-    border: 5px;
-}
-
 h1 {
     color: pink;
 }
+
+.buttonSection {
+    display: flex;
+    justify-content: space-around;
+}
+
+#rockButton {
+    height: 190px;
+    width: 150px;
+}
+
+#paperButton {
+    height: 210px;
+    width: 220px;
+}
+
+#scissorsButton {
+    height: 200px;
+    width: auto;
+
+}
+
+.scoreBoard {
+    display: flex;
+    justify-content: space-around;
+
+}
+
