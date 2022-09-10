@@ -1,0 +1,15 @@
+.scoreBoard {
+    border-width: 3px;
+    border-color: black;
+}
+
+
+.playerTally {
+    border-width: 3px;
+    border-color: black;
+    border: 5px;
+}
+
+h1 {
+    color: pink;
+}

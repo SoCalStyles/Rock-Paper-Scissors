@@ -2,74 +2,84 @@ let pScore = 0;
 let tieScore = 0;
 let cScore = 0;
 
-// Function to play 5 rounds, keep score, and report winner
-function game() {
-    for (let i = 0; i < 5; i++){
+const choices = ["ROCK", "PAPER", "SCISSORS"];
 
+const rockButton = document.querySelector('#rockButton');
+const paperButton = document.querySelector('#paperButton');
+const scissorsButton = document.querySelector('#scissorsButton');
+
+const chosen = document.querySelector('.chosen');
+const roundResult = document.querySelector('.roundResult');
+const gameResult = document.querySelector('.gameResult');
             
 // Computer will randomly generate rock, paper, or scissors
 function getComputerChoice() {
     return choices[Math.floor(Math.random()*choices.length)];
 }
 
-// Function to get player choice and filter input
-function getPlayerChoice() {
-    let input;
-    while (true) {
-        input = prompt("Choose Your Weapon");
-        if (input == null) {
-            input = prompt("Choose Your Weapon");
-        }
-        input = input.toUpperCase();
-        if (input === "ROCK" || input=== "PAPER" || input === "SCISSORS") {
-            return input;
-        }
-    }
-}
-
 // Function that plays a single round
 function playRound(playerType, computerType) {
-    let winner = "";
     if (playerType === computerType) {
         tieScore++;
-        return winner = "TIE";
+        roundResult.textContent = "Round is a TIE";
     } else if ((playerType === "ROCK" && computerType === "SCISSORS") || (playerType === "PAPER" && computerType === "ROCK") || (playerType === "SCISSORS" && computerType === "PAPER")) {
         pScore++;
-        return winner = "PLAYER";
+        roundResult.textContent = "Round goes to PLAYER";
     } else {
         cScore++;
-        return winner = "EVIL COMPUTER";
+        roundResult.textContent = "Round goes to EVIL COMPUTER";
     }
-
+    
 }
 
-const choices = ["ROCK", "PAPER", "SCISSORS"];
-const playerSelection = getPlayerChoice();
-const computerSelection = getComputerChoice();
+if (pScore < 5 && tieScore < 5 && cScore < 5) {
+rockButton.addEventListener('click', () => {
+    const playerSelection = "ROCK";
+    const computerSelection = getComputerChoice();
+    playRound(playerSelection, computerSelection);
+    console.log(playerSelection, computerSelection, pScore, tieScore, cScore);
+    chosen.textContent = `You chose ROCK, computer chose ${computerSelection}`;
+    finalResult();
+});
+paperButton.addEventListener('click', () => {
+    const playerSelection = "PAPER";
+    const computerSelection = getComputerChoice();
+    playRound(playerSelection, computerSelection);
+    console.log(playerSelection, computerSelection, pScore, tieScore, cScore);
+    chosen.textContent = `You chose PAPER, computer chose ${computerSelection}`;
+    finalResult();
+});
 
-console.log(playerSelection);
-console.log(computerSelection);
-console.log(playRound(playerSelection, computerSelection));
+scissorsButton.addEventListener('click', () => {
+    const playerSelection = "SCISSORS";
+    const computerSelection = getComputerChoice();
+    playRound(playerSelection, computerSelection);
+    console.log(playerSelection, computerSelection, pScore, tieScore, cScore);
+    chosen.textContent = `You chose SCISSORS, computer chose ${computerSelection}`;
+    finalResult();
+});
+}
 
-console.log(pScore);
-console.log(tieScore);
-console.log(cScore);
-
-} 
-}  
-
-game();
-
-function checkScore(playerScore, computerScore) {
-    let winner;
-    if (playerScore === computerScore) {
-        return winner = "TIE GAME";
-    } else if (playerScore > computerScore) {
-        return winner =  "PLAYER WINS";
+function finalResult() {
+    if (pScore === 5) {
+        gameResult.textContent = "You defeated The Evil Computer!";
+    } else if (tieScore === 5) {
+        gameResult.textContent = "It's a draw!";
+    } else if (cScore === 5) {
+        gameResult.textContent = "The Evil Computer has won!";
     } else {
-        return winner = "EVIL COMPUTER WINS";
     }
 }
 
-console.log(checkScore(pScore, cScore));
+
+
+
+
+
+
+
+
+
+
+
 
