@@ -8,20 +8,33 @@
     <title>Rock-Paper-Scissors</title>
 </head>
 <body>
-    <h1 class="title">CAN YOU DEFEAT THE EVIL COMPUTER?!</h1>
+    <h1 class="title">CAN YOU DEFEAT BIKINI BOTTOM'S BEST?</h1>
+    <div class="opponentSection"></div>
     <div class="buttonSection">
-        <img id="rockButton" src="./images/rockHand.png" alt="a hand using rock">
-        <img id="paperButton" src="./images/paperHand.png" alt="a hand playing paper">
-        <img id="scissorsButton" src="./images/scissorHand.webp" alt="a hand playing scissors">
+        <img id="rockButton" src="./images/rockHand.jpg" alt="a hand using rock">
+        <img id="paperButton" src="./images/paperHand.jpg" alt="a hand playing paper">
+        <img id="scissorsButton" src="./images/scissorsHand.jpg" alt="a hand playing scissors">
     </div>
-    <div class="chosen"></div>
-    <div class="roundResult"></div>
-    <div class="gameResult"></div>
+    <div class="details">
+        <div class="chosen"></div>
+        <div class="roundResult"></div>
+    </div>
     <div class="scoreBoard">
-        <div class="tally playerTally"></div>
-        <div class="tally tieTally"></div>
-        <div class="tally computerTally"></div>
+        <div class="player">
+            <div>PLAYER SCORE</div>
+            <div class="tally playerTally"></div>
+        </div>    
+        <div class="ties">  
+            <div>TIES</div> 
+            <div class="tally tieTally"></div>
+        </div>
+        <div class="opponent">
+            <div>OPPONENT SCORE</div>
+            <div class="tally computerTally"></div>
+        </div>    
     </div>
+    <h2 class="gameResult"></h2>
+    <button class="playAgain postGame">Play Again!</button>
 
 
 

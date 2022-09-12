@@ -1,31 +1,123 @@
+body {
+    background-image: url(./images/bikiniBottom.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 h1 {
-    color: pink;
+    margin-top: 80px;
+    margin-bottom: 0px;
+    color: white;
+    font-size: 50px;
 }
 
 .buttonSection {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 50px;
 }
 
-#rockButton {
-    height: 190px;
-    width: 150px;
-}
-
-#paperButton {
-    height: 210px;
-    width: 220px;
-}
-
-#scissorsButton {
+#rockButton, #paperButton, #scissorsButton {
     height: 200px;
     width: auto;
-
+    border-radius: 60px;
 }
+
+#rockButton:hover, #paperButton:hover, #scissorsButton:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    border: 1px solid #fcff34;
+    box-shadow: 0 0 10px #fcff34;
+}
+
+.opponentSection, .chosen, .roundResult {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.opponentSection {
+    padding: 5px 20px;
+    color: black;
+    border: 2px solid black;
+    background-color: rgb(255, 255, 65);
+    border-radius: 2px;
+    margin: 30px;
+}   
+
+.details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 20px;
+    color: black;
+    border: 2px solid black;
+    background-color: rgb(97, 255, 97);
+    border-radius: 2px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    
+}
+
+.chosen, .roundResult {
+    font-size: 18px;
+    flex: 1 0 auto;
+}
+
 
 .scoreBoard {
     display: flex;
-    justify-content: space-around;
-
+    gap: 50px;
+    padding: 10px 30px;
+    border: 2px solid black;
+    background-color: rgb(255, 146, 164);
+    border-radius: 2px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
 }
 
+.player, .ties, .opponent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 600;
+}
+
+h2 {
+    margin-top: 0;
+    color: white;
+}
+
+.gameResult {
+    padding: 5px 20px;
+    border: 2px solid black;
+    color: black;
+    background-color: white;
+    border-radius: 2px;
+}
+
+.playAgain {
+    display: none;
+}
+
+.postGame {
+    border: none;
+    padding: 20px 40px;
+    background-color: rgb(255, 96, 255);
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+.postGame:hover {
+    transform: scale(1.1);
+    cursor: grab;
+    border: 1px solid #fcff34;
+    box-shadow: 0 0 10px #fcff34;
+}
